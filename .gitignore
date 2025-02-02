@@ -1,0 +1,14 @@
+dist/
+build/
+
+*.png
+*.jpg
+
+*.spec
+*.log
+*.db
+
+
+.env
+
+__pycache__/
