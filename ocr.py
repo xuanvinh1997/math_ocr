@@ -23,5 +23,15 @@ class OCR:
 
     def extract_text(self, image_path):
         prompt = "Extract text from the image without changing the content. Please use $...$ or $$...$$ to denote math expressions."
-        response = self.model.generate_content
+        
+        myfile = genai.upload_file(image_path)
+        
+        response = self.model.generate_content(
+            contents=[
+                prompt,
+                myfile
+            ]
+        )
+
+        return response.parts[0].text
         
